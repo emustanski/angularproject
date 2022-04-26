@@ -1,0 +1,14 @@
+<section id="all-ads-page">
+
+<article class="all-ads-title">
+  <h1>All ads</h1>
+</article>
+
+<div *ngIf="Ad">
+  <app-add-item *ngFor="let ad of Ad" [ad]="ad"></app-add-item>
+  <div *ngIf="Ad.length === 0">No Ads!</div>
+</div>
+<div *ngIf="!Ad">
+  Loading...
+</div>
+</section>
