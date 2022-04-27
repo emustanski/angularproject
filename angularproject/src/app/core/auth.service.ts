@@ -10,6 +10,9 @@ import { IUser } from './interfaces';
 export interface User {
   uid: string;
   email: string;
+  // skills: string;
+  // photoURL: string;
+  // name: string;
 }
 
 @Injectable({
@@ -32,6 +35,7 @@ export class AuthService {
         this.userData = user;
         localStorage.setItem('user', JSON.stringify(this.userData));
         JSON.parse(localStorage.getItem('user'));
+        
       } else {
         localStorage.setItem('user', 'null');
         JSON.parse(localStorage.getItem('user'));
@@ -90,6 +94,9 @@ export class AuthService {
     const userData: User = {
         uid: user.uid,
         email: user.email,
+        // skills: user.skills,
+        // photoURL: user.photoURL,
+        // name: user.name
     };
    
     return userRef.set(userData, {

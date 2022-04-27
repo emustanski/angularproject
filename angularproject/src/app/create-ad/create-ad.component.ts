@@ -27,13 +27,7 @@ export class CreateAdComponent implements OnInit {
     this.adForm = this.fb.group({
       headline: ['', [Validators.required, Validators.minLength(5)]],
       company: ['', [Validators.required, Validators.minLength(3)]],
-      description: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(20),
-        ],
-      ],
+      description: ['',[Validators.required, Validators.minLength(20)]],
       location: ['', [Validators.required, Validators.minLength(8)]],
     });
   }

@@ -22,12 +22,13 @@ export class AdService {
       headline: ad.headline,
       company: ad.company,
       description: ad.description,
-      location: ad.location
+      location: ad.location,
     })
   }
 
   GetAd(id: string) {
     this.adRef = this.db.object('allads/' + id);
+    
     return this.adRef;
   }
 

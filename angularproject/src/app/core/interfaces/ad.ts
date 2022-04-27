@@ -1,3 +1,4 @@
+import { User } from '../auth.service';
 import { IBase } from './base';
 import { IUser } from './user';
 
@@ -6,5 +7,5 @@ export interface IAd extends IBase {
   company: string;
   description: string;
   location: string;
-  userId: IUser;
+  authorId: User
 }

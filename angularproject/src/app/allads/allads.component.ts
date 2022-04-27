@@ -30,7 +30,7 @@ export class AlladsComponent implements OnInit {
       this.Ad = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
-        a['_id'] = item.key; // here was the problem with /id
+        a['$id'] = item.key; // here was the problem with /id
         this.Ad.push(a as IAd);
       })
     })
