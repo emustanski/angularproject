@@ -4,6 +4,7 @@ import {
   AngularFirestore, AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
+import { IUser } from './interfaces';
 
 
 export interface User {
@@ -15,15 +16,17 @@ export interface User {
   providedIn: 'root',
 })
 export class AuthService {
+
+  currentUser: IUser;
+  
   userData: any; // Save logged in user data
   constructor(
-    public angularFireStore: AngularFirestore, // Inject Firestore service
-    public angularFireAuth: AngularFireAuth, // Inject Firebase auth service
+    public angularFireStore: AngularFirestore, 
+    public angularFireAuth: AngularFireAuth, 
     public router: Router,
-    public ngZone: NgZone // NgZone service to remove outside scope warning
+    public ngZone: NgZone 
   ) {
-    /* Saving user data in localstorage when 
-    logged in and setting up null when logged out */
+    
     this.angularFireAuth.authState.subscribe((user) => {
       if (user) {
         this.userData = user;

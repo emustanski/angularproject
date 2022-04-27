@@ -3,6 +3,9 @@ import { AdService } from '../core/ad.service';
 import { IAd } from '../core/interfaces';
 import { ToastrService } from 'ngx-toastr';
 
+
+
+
 @Component({
   selector: 'app-allads',
   templateUrl: './allads.component.html',
@@ -19,7 +22,7 @@ export class AlladsComponent implements OnInit {
     public createAd: AdService,
     public toastr: ToastrService
     ){ }
-
+    
   ngOnInit() {
     this.dataState();
     let s = this.createAd.getAllAds(); 
@@ -27,7 +30,7 @@ export class AlladsComponent implements OnInit {
       this.Ad = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
-        a['$key'] = item.key;
+        a['_id'] = item.key; // here was the problem with /id
         this.Ad.push(a as IAd);
       })
     })
@@ -46,7 +49,7 @@ export class AlladsComponent implements OnInit {
   }
   deleteAd(ad) {
     if (window.confirm('Are sure you want to delete this ad ?')) { 
-      this.createAd.DeleteAd(ad.$key)
+      this.createAd.DeleteAd(ad.$id)
       this.toastr.success(ad.headline + ' successfully deleted!');
     }
   }

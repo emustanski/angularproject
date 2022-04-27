@@ -53,16 +53,18 @@ export class CreateAdComponent implements OnInit {
   get location() {
     return this.adForm.get('location');
   }
+  
 
   ResetForm() {
     this.adForm.reset();
   }
 
   submitAdData() {
+    
     this.createAd.CreateAd(this.adForm.value);
     this.toastr.success(
       this.adForm.controls['headline'].value + ' successfully added!'
     );
-    this.ResetForm();
+    this.ResetForm(); // TODO redirect to somewhere
   }
 }

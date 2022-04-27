@@ -6,13 +6,14 @@ import { AlladsComponent } from './allads/allads.component';
 import { HomeComponent } from './home/home.component';
 import { DetailsComponent } from './details/details.component';
 import { EditAdComponent } from './edit-ad/edit-ad.component';
+import { AuthGuard } from './auth/guard/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },  
-  { path: 'create-ad', component: CreateAdComponent },
+  { path: 'create-ad', component: CreateAdComponent, canActivate: [AuthGuard] },
   { path: 'allads', component: AlladsComponent },
-  { path: 'home', component: HomeComponent},
-  { path: 'details', component: DetailsComponent},
+  { path: 'home', component: HomeComponent },
+  { path: 'allads/:id', component: DetailsComponent },
   { path: 'edit-ad/:id', component: EditAdComponent }
 ];
 @NgModule({

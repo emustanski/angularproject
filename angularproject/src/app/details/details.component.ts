@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IAd } from '../core/interfaces';
-import { EditAdComponent } from '../edit-ad/edit-ad.component';
+
 
 @Component({
   selector: 'app-details',
