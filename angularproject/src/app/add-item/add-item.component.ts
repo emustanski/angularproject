@@ -1,6 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Router } from 'express';
 import { IAd } from '../core/interfaces';
 
 @Component({
@@ -11,9 +9,9 @@ import { IAd } from '../core/interfaces';
 export class AddItemComponent implements OnInit {
 
   @Input() ad: IAd 
-  constructor(public route: ActivatedRoute) { }
+  constructor() { }
   ngOnInit(): void {
-    this.route.snapshot.paramMap.get('id');
+   
   }
 
 }

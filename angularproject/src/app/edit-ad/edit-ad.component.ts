@@ -25,7 +25,7 @@ export class EditAdComponent implements OnInit {
 
   ngOnInit() {
     this.updateAdData();
-    const id = this.actRoute.snapshot.paramMap.get('_id');
+    const id = this.actRoute.snapshot.paramMap.get('id');
     this.ad
       .GetAd(id)
       .valueChanges()

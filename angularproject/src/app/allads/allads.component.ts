@@ -24,6 +24,7 @@ export class AlladsComponent implements OnInit {
     ){ }
     
   ngOnInit() {
+    
     this.dataState();
     let s = this.createAd.getAllAds(); 
     s.snapshotChanges().subscribe(data => {
@@ -47,10 +48,5 @@ export class AlladsComponent implements OnInit {
       }
     })
   }
-  deleteAd(ad) {
-    if (window.confirm('Are sure you want to delete this ad ?')) { 
-      this.createAd.DeleteAd(ad.$id)
-      this.toastr.success(ad.headline + ' successfully deleted!');
-    }
-  }
+  
 }

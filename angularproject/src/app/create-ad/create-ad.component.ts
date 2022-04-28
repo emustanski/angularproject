@@ -29,6 +29,7 @@ export class CreateAdComponent implements OnInit {
       company: ['', [Validators.required, Validators.minLength(3)]],
       description: ['',[Validators.required, Validators.minLength(20)]],
       location: ['', [Validators.required, Validators.minLength(8)]],
+      username: ['', [Validators.required, Validators.minLength(5),]]
     });
   }
 
@@ -48,6 +49,9 @@ export class CreateAdComponent implements OnInit {
     return this.adForm.get('location');
   }
   
+  get username() {
+    return this.adForm.get('username')
+  }
 
   ResetForm() {
     this.adForm.reset();
@@ -59,6 +63,6 @@ export class CreateAdComponent implements OnInit {
     this.toastr.success(
       this.adForm.controls['headline'].value + ' successfully added!'
     );
-    this.ResetForm(); // TODO redirect to somewhere
+    // this.ResetForm(); // TODO redirect to somewhere
   }
 }

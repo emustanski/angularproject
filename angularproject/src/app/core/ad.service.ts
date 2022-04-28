@@ -11,11 +11,12 @@ import {
   providedIn: 'root',
    
 }) 
+
 export class AdService {
   adsRef: AngularFireList<any>;
   adRef: AngularFireObject<any>;
 
-  constructor(private db: AngularFireDatabase) {}
+  constructor(public db: AngularFireDatabase) {}
 
   CreateAd(ad: IAd) {
     this.adsRef.push({
@@ -23,6 +24,7 @@ export class AdService {
       company: ad.company,
       description: ad.description,
       location: ad.location,
+      username: ad.username
     })
   }
 
@@ -31,6 +33,10 @@ export class AdService {
     
     return this.adRef;
   }
+getAdId() {
+  const adRef = this.db.object('allads');
+  
+}
 
   getAllAds() {
     this.adsRef = this.db.list('allads');
@@ -42,7 +48,7 @@ export class AdService {
       headline: ad.headline,
       company: ad.company,
       description: ad.description,
-      location: ad.location
+      location: ad.location,
     });
   }
 
