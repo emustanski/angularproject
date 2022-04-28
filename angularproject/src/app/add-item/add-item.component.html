@@ -1,22 +1,18 @@
 <article class="all-ads-card">
-    <article class="all-ads-card-image">
-        
-        <img src="./assets/static/img/job-icon1.png" alt="job-icon">
-    </article>
+  <article class="all-ads-card-image">
+    <img src="./assets/static/img/job-icon1.png" alt="job-icon" />
+  </article>
 
-    <article class="all-ads-card-content">
-        
-        <h2>{{ad.headline}}</h2>
-        <h3>Company name:{{ad.company}}</h3>
-        <article class="all-ads-card-content-item">
-            
-            <img src="./assets/static/img/map-icon.png">
-            <p>Location: {{ad.location}}</p>
-        </article>
+  <article class="all-ads-card-content">
+    <h2>{{ ad.headline }}</h2>
+    <h3>Company name:{{ ad.company }}</h3>
+    <article class="all-ads-card-content-item">
+      <img src="./assets/static/img/map-icon.png" />
+      <p>Location: {{ ad.location }}</p>
     </article>
+  </article>
 
-    <article class="all-ads-card-buttons">
-        <a [routerLink]="['/allads', ad.$id]" class="btn-details">Details</a>
-    </article>
+  <article class="all-ads-card-buttons">
+    <a [routerLink]="['/allads', ad.$id]" class="btn-details">Details</a>
+  </article>
 </article>
-

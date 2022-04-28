@@ -1,53 +1,60 @@
-            <section id="edit-page">
+<section id="edit-page">
+  <article class="edit-page-container">
+    <form
+      [formGroup]="editForm"
+      (ngSubmit)="updateForm()"
+      class="edit-page-form"
+    >
+      <h2>Edit an ad</h2>
 
-                <article class="edit-page-container">
-                    <form [formGroup]="editForm" (ngSubmit)="updateForm()" class="edit-page-form">
-                        <h2>Edit an ad</h2>
+      <label for="headline">Headline:</label>
+      <input type="text" id="headline" formControlName="headline" required />
+      <p *ngIf="headline.touched && headline.invalid" class="error">
+        <sup>*</sup>Please enter headline
+      </p>
+      <p *ngIf="headline.errors?.['minlength']" class="error">
+        <sup>*</sup>Headline must be at least 5 characters long.
+      </p>
 
-                        <label for="headline">Headline:</label>
-                        <input type="text" id="headline" formControlName="headline" required>
-                        <p *ngIf="headline.touched && headline.invalid" class="error">
-                            <sup>*</sup>Please enter headline
-                          </p>
-                          <p *ngIf="headline.errors?.['minlength']" class="error">
-                            <sup>*</sup>Headline must be at least 5 characters long.
-                          </p>
+      <label for="location">Location:</label>
+      <input type="text" id="location" formControlName="location" required />
+      <p *ngIf="location.touched && location.invalid" class="error">
+        <sup>*</sup>Please enter location
+      </p>
+      <p *ngIf="location.errors?.['minlength']" class="error">
+        <sup>*</sup>Location must be at least 8 characters long.
+      </p>
 
-                        <label for="location">Location:</label>
-                        <input type="text" id="location" formControlName="location" required>
-                        <p *ngIf="location.touched && location.invalid" class="error">
-                            <sup>*</sup>Please enter location
-                          </p>
-                          <p *ngIf="location.errors?.['minlength']" class="error">
-                            <sup>*</sup>Location must be at least 8 characters long.
-                          </p>
+      <label for="company-name">Company name:</label>
+      <input type="text" id="company-name" formControlName="company" required />
+      <p *ngIf="company.touched && company.invalid" class="error">
+        <sup>*</sup>Please enter company name
+      </p>
+      <p *ngIf="company.errors?.['minlength']" class="error">
+        <sup>*</sup>Company name must be at least 5 characters long.
+      </p>
 
-                        <label for="company-name">Company name:</label>
-                        <input type="text" id="company-name" formControlName="company" required>
-                        <p *ngIf="company.touched && company.invalid" class="error">
-                            <sup>*</sup>Please enter company name
-                          </p>
-                          <p *ngIf="company.errors?.['minlength']" class="error">
-                            <sup>*</sup>Company name must be at least 5 characters long.
-                          </p>
+      <label for="company-description">Company description:</label>
+      <input
+        type="text"
+        id="company-description"
+        formControlName="description"
+        required
+      />
+      <p *ngIf="description.touched && description.invalid" class="error">
+        <sup>*</sup>Please enter headline
+      </p>
+      <p *ngIf="description.errors?.['minlength']" class="error">
+        <sup>*</sup>Description must be at least 20 characters long.
+      </p>
 
-                        <label for="company-description">Company description:</label>
-                        <input type="text" id="company-description" formControlName="description" required>
-                        <p *ngIf="description.touched && description.invalid" class="error">
-                            <sup>*</sup>Please enter headline
-                          </p>
-                          <p *ngIf="description.errors?.['minlength']" class="error">
-                            <sup>*</sup>Description must be at least 20 characters long.
-                          </p>
-                          
-                        <article class="edit-page-button">
-                            <button class="btn-edit-ads">Edit</button>
-                        </article>
-                    </form>
+      <article class="edit-page-button">
+        <button class="btn-edit-ads">Edit</button>
+      </article>
+    </form>
 
-                    <article class="edit-page-image">
-                        <img src=".//assets/static/img/job.png" alt="image">
-                    </article>
-                </article>
-
-            </section>
+    <article class="edit-page-image">
+      <img src="./assets/static/img/job.png" alt="image" />
+    </article>
+  </article>
+</section>

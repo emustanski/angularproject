@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "format": "prettier \"src/**/*.(ts|html|css)\" --write"
   },
   "private": true,
   "dependencies": {
@@ -19,7 +20,7 @@
     "@angular/localize": "~13.3.0",
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
-    "@angular/router": "~13.3.0",
+    "@angular/router": "13.2.6",
     "@ng-bootstrap/ng-bootstrap": "^12.0.2",
     "@popperjs/core": "^2.10.2",
     "angularfire": "^2.3.0",
@@ -28,6 +29,7 @@
     "firebase": "^9.6.11",
     "ngx-pagination": "^5.1.1",
     "ngx-toastr": "^14.3.0",
+    "prettier": "^2.6.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

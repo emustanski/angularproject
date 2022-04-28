@@ -10,17 +10,22 @@ import { AuthGuard } from './auth/guard/auth.guard';
 import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },  
+  {
+    path: 'auth',
+    loadChildren: () =>
+      import('./auth/auth.module').then((m) => m.AuthModule),
+  },
   { path: 'create-ad', component: CreateAdComponent, canActivate: [AuthGuard] },
   { path: 'allads', component: AlladsComponent },
   { path: 'home', component: HomeComponent },
   { path: 'allads/:id', component: DetailsComponent },
   { path: 'edit-ad/:id', component: EditAdComponent },
-  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]}
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 @NgModule({
-  imports: [CommonModule ,RouterModule.forRoot(routes)],
+  imports: [CommonModule, RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  declarations: []
+  declarations: [],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

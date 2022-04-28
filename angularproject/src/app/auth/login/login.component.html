@@ -1,31 +1,39 @@
 <!-- TODO Fix CSS  -->
 <section id="login-page">
+  <article class="login-page-container">
+    <div class="login-page-div">
+      <h2>Login</h2>
+      <p>Welcome, see the new ads!</p>
 
-    <article class="login-page-container">
+      <label for="email">Email:</label>
+      <input type="text" id="email" placeholder="Your email" #email required />
 
-        <div class="login-page-div">
-            <h2>Login</h2>
-            <p>Welcome, see the new ads!</p>
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        placeholder="******"
+        #password
+        required
+      />
 
-            <label for="email">Email:</label>
-            <input type="text"   id="email" placeholder="Your email" #email required>
+      <article class="login-page-button">
+        <button
+          class="btn-login"
+          (click)="authService.SignIn(email.value, password.value)"
+        >
+          Login
+        </button>
+      </article>
 
-            <label for="password">Password:</label>
-            <input type="password"  id="password" placeholder="******" #password required>
+      <article class="no-account">
+        <p>Don't have an account? <a routerLink="/auth/register">Sign up</a></p>
+      </article>
+    </div>
 
-            <article class="login-page-button">
-                <button class="btn-login"  (click)="authService.SignIn(email.value, password.value)">Login</button>
-            </article>
-
-            <article class="no-account">
-                <p>Don't have an account? <a routerLink="/register">Sign up</a></p>
-            </article>
-        </div>
-
-        <article class="login-page-image">
-            <!-- Do not forget to change the path to the image -->
-            <img src="./assets/static/img/job.png" alt="job-image">
-        </article>
+    <article class="login-page-image">
+      <!-- Do not forget to change the path to the image -->
+      <img src="./assets/static/img/job.png" alt="job-image" />
     </article>
-
+  </article>
 </section>

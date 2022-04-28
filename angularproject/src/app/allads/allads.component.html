@@ -1,13 +1,17 @@
 <section id="all-ads-page">
-  
-<article class="all-ads-title">
-  <h1>All ads</h1>
-  <div *ngIf="Ad">
-     <app-add-item  *ngFor="let ad of Ad" [ad]="ad"></app-add-item>
-      <div *ngIf="Ad.length === 0">No Ads!</div>
-       <div *ngIf="!Ad">
-        Loading...
-      </div> 
-  </div>
-</article>
+  <article class="all-ads-title">
+    <h1>All ads</h1>
+    <div *ngIf="Ad">
+      <app-add-item *ngFor="let ad of Ad | paginate: { itemsPerPage: 4, currentPage: p}; let i = index" [ad]="ad"></app-add-item>
+      <ng-container *ngIf="Ad.length === 0"> 
+
+      <article class="not-available-ads">
+        <h1>No ads created yet.</h1>
+        <h2>Join and find your perfect workers.</h2>
+    </article>
+  </ng-container>
+      <div *ngIf="!Ad">Loading...</div>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </article>
 </section>

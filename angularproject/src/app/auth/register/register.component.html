@@ -1,35 +1,51 @@
-<!-- TODO Fix CSS  -->
 <section id="register-page">
-<article class="register-page-container">
+  <article class="register-page-container">
     <div class="register-page-div">
-        <h2>Register</h2>
-        <p>Join us and find the perfect job.</p>
+      <h2>Register</h2>
+      <p>Join us and find the perfect job.</p>
 
-        <label for="email">Email:</label>
-        <input type="email" formControl id="email" placeholder="Your email" #userEmail required>
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        formControl
+        id="email"
+        placeholder="Your email"
+        #userEmail
+        required
+      />
 
-        <label for="password">Password:</label>
-        <input type="password" formControl id="password" placeholder="******" #userPassword required>
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        formControl
+        id="password"
+        placeholder="******"
+        #userPassword
+        required
+      />
 
-         <!-- <label for="repeat-password">Repeat Password:</label>
+      <!-- <label for="repeat-password">Repeat Password:</label>
         <input type="password" formControl id="repeat-password" placeholder="******" #repass required> -->
 
-     <!-- <label for="description">Briefly describe your skills:</label>
+      <!-- <label for="description">Briefly describe your skills:</label>
         <input type="text" formControl id="description" placeholder="Your skills" #skills required> -->
 
-        <article class="register-page-button">
-            <button class="btn-register" (click)="authService.SignUp(userEmail.value, userPassword.value)">Register</button>
-        </article>
+      <article class="register-page-button">
+        <button
+          class="btn-register"
+          (click)="authService.SignUp(userEmail.value, userPassword.value)"
+        >
+          Register
+        </button>
+      </article>
 
-        <article class="account">
-            <p>Already have an account? <a routerLink="/login">Sign in</a></p>
-        </article>
-
+      <article class="account">
+        <p>Already have an account? <a routerLink="/auth/login">Sign in</a></p>
+      </article>
     </div>
 
     <article class="register-page-image">
-        <img src="./assets/static/img/job.png" alt="image">
+      <img src="./assets/static/img/job.png" alt="image" />
     </article>
-</article>
- </section>
-
+  </article>
+</section>

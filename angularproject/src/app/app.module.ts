@@ -22,15 +22,12 @@ import { EditAdComponent } from './edit-ad/edit-ad.component';
 import { AuthRoutingModule } from './auth/auth-routing.module';
 import { AuthModule } from './auth/auth.module';
 
-
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { ProfileComponent } from './profile/profile.component';
-
-
 
 @NgModule({
   declarations: [
@@ -50,25 +47,16 @@ import { ProfileComponent } from './profile/profile.component';
     AngularFireStorageModule,
     AngularFireDatabaseModule,
     BrowserModule,
-    RouterModule,
+    AppRoutingModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     CoreModule.forRoot(),
-    AppRoutingModule,
     ReactiveFormsModule,
     NgxPaginationModule,
     SharedModule,
-    AuthRoutingModule,
-    AuthModule
   ],
-  providers: [
-    {provide: APP_BASE_HREF, useValue: "/"}
-  ],
-  bootstrap: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-  ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
+  bootstrap: [AppComponent, HeaderComponent, FooterComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule { }
+export class AppModule {}

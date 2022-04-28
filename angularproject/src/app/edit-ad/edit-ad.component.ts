@@ -8,10 +8,9 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-edit-ad',
   templateUrl: './edit-ad.component.html',
-  styleUrls: ['./edit-ad.component.css']
+  styleUrls: ['./edit-ad.component.css'],
 })
 export class EditAdComponent implements OnInit {
-
   editForm: FormGroup;
 
   constructor(
@@ -20,7 +19,7 @@ export class EditAdComponent implements OnInit {
     private loc: Location,
     private actRoute: ActivatedRoute,
     private router: Router,
-    private toastr: ToastrService
+    private toastr: ToastrService,
   ) {}
 
   ngOnInit() {
@@ -29,7 +28,7 @@ export class EditAdComponent implements OnInit {
     this.ad
       .GetAd(id)
       .valueChanges()
-      .subscribe((data) => {
+      .subscribe(data => {
         this.editForm.setValue(data);
       });
   }
@@ -54,13 +53,7 @@ export class EditAdComponent implements OnInit {
     this.editForm = this.fb.group({
       headline: ['', [Validators.required, Validators.minLength(5)]],
       company: ['', [Validators.required, Validators.minLength(3)]],
-      description: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(20),
-        ],
-      ],
+      description: ['', [Validators.required, Validators.minLength(20)]],
       location: ['', [Validators.required, Validators.minLength(8)]],
     });
   }
@@ -72,9 +65,8 @@ export class EditAdComponent implements OnInit {
   updateForm() {
     this.ad.UpdateAd(this.editForm.value);
     this.toastr.success(
-      this.editForm.controls['headline'].value + ' updated successfully'
+      this.editForm.controls['headline'].value + ' updated successfully',
     );
     this.router.navigate(['allads']);
   }
-
 }

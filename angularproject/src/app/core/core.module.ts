@@ -6,31 +6,17 @@ import { AuthService } from './auth.service';
 import { AdService } from './ad.service';
 import { RouterModule } from '@angular/router';
 
-
-
 @NgModule({
-  declarations: [
-    HeaderComponent,
-    FooterComponent,
-  ],
-  imports: [
-    CommonModule,
-    RouterModule
-  ],
-  exports: [
-    HeaderComponent,
-    FooterComponent,
-  ],
-  providers: []
+  declarations: [HeaderComponent, FooterComponent],
+  imports: [CommonModule, RouterModule],
+  exports: [HeaderComponent, FooterComponent],
+  providers: [],
 })
 export class CoreModule {
   static forRoot(): ModuleWithProviders<CoreModule> {
     return {
       ngModule: CoreModule,
-      providers: [
-        AuthService,
-        AdService
-      ]
-    }
+      providers: [AuthService, AdService],
+    };
   }
- }
+}

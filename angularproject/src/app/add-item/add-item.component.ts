@@ -4,14 +4,10 @@ import { IAd } from '../core/interfaces';
 @Component({
   selector: 'app-add-item',
   templateUrl: './add-item.component.html',
-  styleUrls: ['./add-item.component.css']
+  styleUrls: ['./add-item.component.css'],
 })
 export class AddItemComponent implements OnInit {
-
-  @Input() ad: IAd 
-  constructor() { }
-  ngOnInit(): void {
-   
-  }
-
+  @Input() ad: IAd;
+  constructor() {}
+  ngOnInit(): void {}
 }

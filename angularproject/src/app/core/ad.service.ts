@@ -3,15 +3,12 @@ import { IAd } from './interfaces';
 import {
   AngularFireDatabase,
   AngularFireList,
-  AngularFireObject
-} from '@angular/fire/compat/database'
-
+  AngularFireObject,
+} from '@angular/fire/compat/database';
 
 @Injectable({
   providedIn: 'root',
-   
-}) 
-
+})
 export class AdService {
   adsRef: AngularFireList<any>;
   adRef: AngularFireObject<any>;
@@ -24,19 +21,19 @@ export class AdService {
       company: ad.company,
       description: ad.description,
       location: ad.location,
-      username: ad.username
-    })
+      createdAt: Date.now(),
+    });
   }
 
   GetAd(id: string) {
     this.adRef = this.db.object('allads/' + id);
-    
+
     return this.adRef;
   }
-getAdId() {
-  const adRef = this.db.object('allads');
-  
-}
+
+  getAdId() {
+    const adRef = this.db.object('allads');
+  }
 
   getAllAds() {
     this.adsRef = this.db.list('allads');
@@ -57,6 +54,3 @@ getAdId() {
     this.adRef.remove();
   }
 }
-
-
-

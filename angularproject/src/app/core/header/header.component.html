@@ -1,38 +1,47 @@
 <header class="header">
-    <article class="header-logo">
+  <article class="header-logo">
+    <img src="./assets/static/img/logo.png" />
+  </article>
+  <nav class="header-nav">
+    <ul class="header-nav-list">
+      <li class="header-nav-list-item active">
+        <a routerLink="/home" class="header-nav-list-item-link active"
+          >Home Page</a
+        >
+      </li>
 
-        <img src="./assets/static/img/logo.png">
-    </article>
-    <nav class="header-nav">
-        <ul class="header-nav-list">
+      <li class="header-nav-list-item">
+        <a routerLink="/allads" class="header-nav-list-item-link">All ads</a>
+      </li>
 
-            <li class="header-nav-list-item active">
-                <a routerLink="/home" class="header-nav-list-item-link active">Home Page</a>
-            </li>
+      <li class="header-nav-list-item" *ngIf="isLoggedIn">
+        <a routerLink="/create-ad" class="header-nav-list-item-link"
+          >Create Ad</a
+        >
+      </li>
 
-            <li class="header-nav-list-item">
-                <a routerLink="/allads" class="header-nav-list-item-link">All ads</a>
-            </li>
-    
-            <li class="header-nav-list-item" *ngIf="isLoggedIn">
-                <a routerLink="/create-ad" class="header-nav-list-item-link">Create Ad</a>
-            </li>
+      <li class="header-nav-list-item" *ngIf="isLoggedIn">
+        <a routerLink="/profile" class="header-nav-list-item-link"
+          >My Profile</a
+        >
+      </li>
 
-            <li class="header-nav-list-item" *ngIf="isLoggedIn">
-                <a routerLink="/profile" class="header-nav-list-item-link">My Profile</a>
-            </li>
+      <li class="header-nav-list-item" *ngIf="isLoggedIn">
+        <a
+          type="button"
+          (click)="authService.SignOut()"
+          class="header-nav-list-item-link"
+          >Logout</a
+        >
+      </li>
 
-            <li class="header-nav-list-item" *ngIf="isLoggedIn">
-                <a type="button" (click)="authService.SignOut()" class="header-nav-list-item-link">Logout</a>
-            </li>
-              
-            <li class="header-nav-list-item" *ngIf="!isLoggedIn">
-                <a routerLink="/register" class="header-nav-list-item-link">Register</a>
-            </li>
-            
-            <li class="header-nav-list-item" *ngIf="!isLoggedIn">
-                <a routerLink="/login" class="header-nav-list-item-link">Login</a>
-            </li>
-        </ul>
-    </nav>
+      <li class="header-nav-list-item" *ngIf="!isLoggedIn">
+        <a routerLink="/auth/register" class="header-nav-list-item-link">Register</a>
+      </li>
+
+      <li class="header-nav-list-item" *ngIf="!isLoggedIn">
+        <a routerLink="/auth/login" class="header-nav-list-item-link">Login</a>
+      </li>
+    </ul>
+  </nav>
 </header>

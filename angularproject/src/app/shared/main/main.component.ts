@@ -1,17 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/core/auth.service';
-
+import { Component, Input, OnInit } from '@angular/core';
+import { IAd } from '../../core/interfaces';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css']
+  styleUrls: ['./main.component.css'],
 })
 export class MainComponent implements OnInit {
+  @Input() ads: IAd[];
 
-  constructor(private authService: AuthService) { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
