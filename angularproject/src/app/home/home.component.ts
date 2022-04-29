@@ -23,5 +23,8 @@ export class HomeComponent implements OnInit {
           })
           .slice(0, 3);
       });
+      // for(let ad of this.latestAds) {
+      //   let firstAd = ad[0]
+      // }
   }
 }

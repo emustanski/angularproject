@@ -5,4 +5,5 @@ export interface IAd extends IBase {
   company: string;
   description: string;
   location: string;
+  authorEmail: string;
 }

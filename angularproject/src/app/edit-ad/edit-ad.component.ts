@@ -55,6 +55,8 @@ export class EditAdComponent implements OnInit {
       company: ['', [Validators.required, Validators.minLength(3)]],
       description: ['', [Validators.required, Validators.minLength(20)]],
       location: ['', [Validators.required, Validators.minLength(8)]],
+      createdAt: '',
+      authorEmail: ''
     });
   }
 

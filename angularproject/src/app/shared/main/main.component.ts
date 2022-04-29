@@ -7,9 +7,10 @@ import { IAd } from '../../core/interfaces';
   styleUrls: ['./main.component.css'],
 })
 export class MainComponent implements OnInit {
-  @Input() ads: IAd[];
+  @Input() ads: IAd[]
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 }

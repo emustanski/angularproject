@@ -59,6 +59,5 @@ export class CreateAdComponent implements OnInit {
       this.adForm.controls['headline'].value + ' successfully added!',
     );
     this.router.navigate(["/allads"])
-    // this.ResetForm(); // TODO redirect to somewhere
   }
 }

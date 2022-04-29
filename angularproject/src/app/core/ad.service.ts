@@ -5,6 +5,8 @@ import {
   AngularFireList,
   AngularFireObject,
 } from '@angular/fire/compat/database';
+import { AuthService } from './auth.service';
+
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +15,8 @@ export class AdService {
   adsRef: AngularFireList<any>;
   adRef: AngularFireObject<any>;
 
-  constructor(public db: AngularFireDatabase) {}
+  constructor(public db: AngularFireDatabase,
+    public authService: AuthService) {}
 
   CreateAd(ad: IAd) {
     this.adsRef.push({
@@ -22,6 +25,7 @@ export class AdService {
       description: ad.description,
       location: ad.location,
       createdAt: Date.now(),
+      authorEmail: this.authService.userEmail
     });
   }
 
@@ -29,10 +33,6 @@ export class AdService {
     this.adRef = this.db.object('allads/' + id);
 
     return this.adRef;
-  }
-
-  getAdId() {
-    const adRef = this.db.object('allads');
   }
 
   getAllAds() {

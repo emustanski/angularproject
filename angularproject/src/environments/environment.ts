@@ -13,9 +13,17 @@ export const environment = {
     messagingSenderId: '23795422357',
     appId: '1:23795422357:web:ce2e15bc07519136f0779c',
     measurementId: 'G-VE197702T4',
-  },
-};
-
+      }
+  } ;
+  
+  //   apiKey: "AIzaSyBE0H4Q3rUh74-ByyrCTevJ_v_PCab1uGI",
+  // authDomain: "findjob-46549.firebaseapp.com",
+  // databaseURL: "https://findjob-46549-default-rtdb.europe-west1.firebasedatabase.app",
+  // projectId: "findjob-46549",
+  // storageBucket: "findjob-46549.appspot.com",
+  // messagingSenderId: "124446975223",
+  // appId: "1:124446975223:web:9671b7a8f5012384b25ff2"
+  // }
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
