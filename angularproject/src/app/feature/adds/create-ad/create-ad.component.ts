@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'create-ad-item',
   templateUrl: './create-ad.component.html',
@@ -17,7 +18,7 @@ export class CreateAdComponent implements OnInit {
     public fb: FormBuilder,
     public toastr: ToastrService,
     public router: Router
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.createAd.getAllAds();
@@ -58,6 +59,6 @@ export class CreateAdComponent implements OnInit {
     this.toastr.success(
       this.adForm.controls['headline'].value + ' successfully added!',
     );
-    this.router.navigate(["/allads"])
+    this.router.navigate(["feature/adds/allads"])
   }
 }

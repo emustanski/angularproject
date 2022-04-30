@@ -7,28 +7,29 @@
 
 .login-page-container {
   background-color: #fff;
-  width: 600px;
-  height: 450px;
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  place-items: center;
-  line-height: 1.5;
-  left: 30%;
-  margin-bottom: 4.95em;
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.185);
-}
-
-.register-page-container {
-  background-color: #fff;
-  width: 620px;
-  height: 529px;
+  width: 750px;
+  height: 520px;
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   place-items: center;
   line-height: 1.5;
   left: 29%;
+  margin-bottom: 4.95em;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.185);
+}
+
+.register-page-container {
+  background-color: #fff;
+  width: 750px;
+  height: 520px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  line-height: 1.5;
+  left: 29%;
+  margin-bottom: 4.95em;
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.185);
 }
 
@@ -42,7 +43,7 @@
 
 .register-page-container > .register-page-image > img {
   width: 250px;
-  height: 405px;
+  height: 380px;
   object-fit: cover;
   object-position: center;
   box-shadow: 2px 2px 6px 4px #9dacf7;
@@ -53,8 +54,7 @@
 }
 
 .register-page-image {
-  margin-top: -0.7em;
-  margin-right: 0.8em;
+  margin-top: 7px;
 }
 
 .login-page-div > h2,
@@ -72,7 +72,7 @@
 .register-page-div {
   text-align: center;
   padding-left: 25px;
-  margin-top: -0.4em;
+  margin-top: -1em;
   padding-right: 30px;
 }
 
@@ -168,3 +168,4 @@ span {
   font-weight: bold;
   text-decoration: none;
 }
+

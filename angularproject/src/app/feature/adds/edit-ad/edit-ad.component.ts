@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { AdService } from '../core/ad.service';
+import { AdService } from '../../../core/ad.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
@@ -17,14 +17,14 @@ export class EditAdComponent implements OnInit {
     private ad: AdService,
     private fb: FormBuilder,
     private loc: Location,
-    private actRoute: ActivatedRoute,
+    private actRouter: ActivatedRoute,
     private router: Router,
     private toastr: ToastrService,
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.updateAdData();
-    const id = this.actRoute.snapshot.paramMap.get('id');
+    const id = this.actRouter.snapshot.paramMap.get('id');
     this.ad
       .GetAd(id)
       .valueChanges()

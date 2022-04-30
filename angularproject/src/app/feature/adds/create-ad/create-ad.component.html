@@ -1,5 +1,3 @@
-<!-- TODO Fix CSS  -->
-
 <section id="create-page">
   <article class="create-page-container">
     <form
@@ -14,15 +12,11 @@
         type="text"
         id="headline"
         formControlName="headline"
-        placeholder="Title for the job"
+        placeholder="Title for your ad"
         required
       />
-      <!-- Error message-->
-      <!-- <p *ngIf="headline.touched && headline.invalid" class="error">
-                <sup>*</sup>Please enter headline
-              </p> -->
       <p *ngIf="headline.errors?.['minlength']" class="error">
-        <sup>*</sup>Headline must be at least 5 characters long.
+        <sup>*</sup>Headline must be at least 3 characters long.
       </p>
 
       <label for="location">Location:</label>
@@ -33,13 +27,8 @@
         placeholder="Where's the job located"
         required
       />
-
-      <!-- Error message-->
-      <!-- <p *ngIf="location.touched && location.invalid" class="error">
-                <sup>*</sup>Please enter location
-              </p> -->
       <p *ngIf="location.errors?.['minlength']" class="error">
-        <sup>*</sup>Location must be at least 8 characters long.
+        <sup>*</sup>Location must be at least 4 characters long.
       </p>
 
       <label for="company">Company name:</label>
@@ -50,13 +39,8 @@
         placeholder="Company name"
         required
       />
-
-      <!-- Error message-->
-      <!-- <p *ngIf="company.touched && company.invalid" class="error">
-                <sup>*</sup>Please enter company name
-              </p> -->
       <p *ngIf="company.errors?.['minlength']" class="error">
-        <sup>*</sup>Company name must be at least 5 characters long.
+        <sup>*</sup>Company name must be at least 4 characters long.
       </p>
 
       <label for="description">Company description:</label>
@@ -67,19 +51,9 @@
         placeholder="What you are doing"
         required
       />
-
-      <!-- Error message-->
-      <!-- <p *ngIf="description.touched && description.invalid" class="error">
-                <sup>*</sup>Please enter description
-              </p> -->
       <p *ngIf="description.errors?.['minlength']" class="error">
-        <sup>*</sup>Description must be at least 20 characters long.
+        <sup>*</sup>Description must be at least 10 characters long.
       </p>
-
-      <!-- Error message-->
-      <!-- <p *ngIf="description.invalid" class="error">
-                <sup>*</sup>Please enter username
-              </p> -->
 
       <article class="create-page-button">
         <button type="submit" class="btn-create">Create Ad</button>

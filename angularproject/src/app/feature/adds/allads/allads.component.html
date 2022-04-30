@@ -11,7 +11,7 @@
     </article>
   </ng-container>
       <div *ngIf="!Ad">Loading...</div>
-      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      <div class="ngx-pagination"><pagination-controls (pageChange)="p = $event"></pagination-controls></div>
     </div>
   </article>
 </section>

@@ -24,17 +24,9 @@
         required
       />
 
-      <!-- <label for="repeat-password">Repeat Password:</label>
-        <input type="password" formControl id="repeat-password" placeholder="******" #repass required> -->
-
-      <!-- <label for="description">Briefly describe your skills:</label>
-        <input type="text" formControl id="description" placeholder="Your skills" #skills required> -->
-
       <article class="register-page-button">
-        <button
-          class="btn-register"
-          (click)="authService.SignUp(userEmail.value, userPassword.value)"
-        >
+        <button class="btn-register"
+        (click)="authService.SignUp(userEmail.value, userPassword.value)">
           Register
         </button>
       </article>

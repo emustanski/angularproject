@@ -16,7 +16,7 @@ export class AdService {
   adRef: AngularFireObject<any>;
 
   constructor(public db: AngularFireDatabase,
-    public authService: AuthService) {}
+    public authService: AuthService) { }
 
   CreateAd(ad: IAd) {
     this.adsRef.push({

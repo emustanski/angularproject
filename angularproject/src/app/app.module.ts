@@ -3,43 +3,24 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { APP_BASE_HREF } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
-import { AlladsComponent } from './allads/allads.component';
-import { CreateAdComponent } from './create-ad/create-ad.component';
 import { CoreModule } from './core/core.module';
-import { ProfileComponent } from './profile/profile.component';
-
-import { ReactiveFormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-import { NgxPaginationModule } from 'ngx-pagination';
-import { HomeComponent } from './home/home.component';
-import { SharedModule } from './shared/shared.module';
-import { AddItemComponent } from './add-item/add-item.component';
-import { DetailsComponent } from './details/details.component';
-import { EditAdComponent } from './edit-ad/edit-ad.component';
-
-
+import { PagesModule } from './feature/pages/pages.module';
+import { AuthService } from './core/auth.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AlladsComponent,
-    CreateAdComponent,
-    HomeComponent,
-    AddItemComponent,
-    DetailsComponent,
-    EditAdComponent,
-    ProfileComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
@@ -52,12 +33,10 @@ import { EditAdComponent } from './edit-ad/edit-ad.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     CoreModule.forRoot(),
-    ReactiveFormsModule,
-    NgxPaginationModule,
-    SharedModule,
+    PagesModule
   ],
-  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' },
+[AuthService]],
   bootstrap: [AppComponent, HeaderComponent, FooterComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}

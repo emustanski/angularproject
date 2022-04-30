@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { AdService } from '../core/ad.service';
-import { IAd } from '../core/interfaces';
 import { ToastrService } from 'ngx-toastr';
+import { AdService } from 'src/app/core/ad.service';
+import { IAd } from 'src/app/core/interfaces';
+
 
 @Component({
   selector: 'app-allads',
   templateUrl: './allads.component.html',
-  styleUrls: ['./allads.component.css'],
+  styleUrls: ['./allads.component.css']
 })
 export class AlladsComponent implements OnInit {
   p: number = 1;
@@ -15,7 +16,7 @@ export class AlladsComponent implements OnInit {
   noData: boolean = false;
   preLoader: boolean = true;
 
-  constructor(public createAd: AdService, public toastr: ToastrService) {}
+  constructor(public createAd: AdService, public toastr: ToastrService) { }
 
   ngOnInit() {
     this.dataState();

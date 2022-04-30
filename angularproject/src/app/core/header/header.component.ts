@@ -13,15 +13,5 @@ export class HeaderComponent {
     const user = JSON.parse(localStorage.getItem('user'));
     return user !== null ? true : false;
   }
-  //   get isLogged(): boolean {
-  //     return this.userService.isLogged
-  //   }
-  // constructor(public userService: UserService) { }
-  // loginHandler(): void {
-  //   this.userService.login();
-  // }
 
-  // logoutHandler(): void {
-  //   this.userService.logout();
-  // }
 }

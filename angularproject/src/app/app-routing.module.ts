@@ -1,27 +1,29 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { CreateAdComponent } from './create-ad/create-ad.component';
-import { AlladsComponent } from './allads/allads.component';
-import { HomeComponent } from './home/home.component';
-import { DetailsComponent } from './details/details.component';
-import { EditAdComponent } from './edit-ad/edit-ad.component';
-import { AuthGuard } from './auth/guard/auth.guard';
-import { ProfileComponent } from './profile/profile.component';
+import { Routes, RouterModule } from '@angular/router'
+import { HomeComponent } from './feature/pages/home/home.component';
+import { NotFoundComponent } from './feature/pages/not-found/not-found.component';
+import { AboutComponent } from './feature/pages/about/about.component';
 
 const routes: Routes = [
+
   {
     path: 'auth',
     loadChildren: () =>
-      import('./auth/auth.module').then((m) => m.AuthModule),
+    import('./auth/auth.module').then((m) => m.AuthModule),
   },
-  { path: 'create-ad', component: CreateAdComponent, canActivate: [AuthGuard] },
-  { path: 'allads', component: AlladsComponent },
+  {
+    path: 'feature/adds',
+    loadChildren: () =>
+    import('./feature/adds/adds.module').then((m) => m.AddsModule)
+  },
+  { path: 'about', component: AboutComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'allads/:id', component: DetailsComponent },
-  { path: 'edit-ad/:id', component: EditAdComponent },
-  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+  {
+    path: '**',
+    component: NotFoundComponent
+}
 ];
 @NgModule({
   imports: [CommonModule, RouterModule.forRoot(routes)],

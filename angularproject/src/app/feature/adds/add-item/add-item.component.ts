@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IAd } from '../core/interfaces';
+import { IAd } from 'src/app/core/interfaces';
+
 
 @Component({
   selector: 'app-add-item',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AdService } from '../core/ad.service';
-import { IAd } from '../core/interfaces';
+import { AdService } from '../../../core/ad.service';
+import { IAd } from '../../../core/interfaces';
 
 @Component({
   selector: 'app-home',
@@ -23,8 +23,6 @@ export class HomeComponent implements OnInit {
           })
           .slice(0, 3);
       });
-      // for(let ad of this.latestAds) {
-      //   let firstAd = ad[0]
-      // }
+      
   }
 }

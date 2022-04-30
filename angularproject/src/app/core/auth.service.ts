@@ -1,4 +1,4 @@
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable, NgZone} from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import {
   AngularFirestore,
@@ -25,13 +25,13 @@ export class AuthService {
     public router: Router,
     public ngZone: NgZone,
     public toastr: ToastrService,
-    
+
   ) {
     this.angularFireAuth.authState.subscribe(user => {
       if (user) {
         this.userData = user;
         localStorage.setItem('user', JSON.stringify(this.userData));
-         this.userEmail = user.email
+        this.userEmail = user.email
         JSON.parse(localStorage.getItem('user'));
 
       } else {
@@ -41,6 +41,7 @@ export class AuthService {
     });
   }
 
+  
   SignIn(email: string, password: string) {
     return this.angularFireAuth
       .signInWithEmailAndPassword(email, password)
@@ -50,13 +51,13 @@ export class AuthService {
           this.router.navigate(['home']);
         });
         this.SetUserData(result.user);
-        
+
       })
       .catch(error => {
-        if(error.code ==  "auth/invalid-email" || "auth/wrong-password"){
+        if (error.code == "auth/invalid-email" || "auth/wrong-password") {
           this.toastr.error('Wrong email address or password.')
-        } 
-           else {
+        }
+        else {
           this.toastr.error('Unknown error!')
         }
       });
@@ -69,25 +70,16 @@ export class AuthService {
         this.SetUserData(result.user);
         this.toastr.success('Succesfully registered!')
         this.router.navigate(['home']);
-        
+
       })
-      .catch(error => { 
-        if(error.code == 'auth/email-already-in-use') {
+      .catch(error => {
+        if (error.code == 'auth/email-already-in-use') {
           this.toastr.error('Email already in use!');
         } else if (error.code == 'auth/weak-password') {
           this.toastr.error('Password must be at least 6 characters long.')
         } else if (error.code == 'auth/invalid-email') {
           this.toastr.error('Email format is invalid.')
-        } else {
-          this.toastr.error('Unknown error!')
-        }
-        switch (error.code) {
-          case "auth/email-already-in-use":
-         {
-           this.toastr.error('Email already in use!');
-        break; 
-      }
-    }
+        } 
       });
   }
 
@@ -96,19 +88,19 @@ export class AuthService {
     return user !== null ? true : false;
   }
 
-  AuthLogin(provider: any) {
-    return this.angularFireAuth
-      .signInWithPopup(provider)
-      .then(result => {
-        this.ngZone.run(() => {
-          this.router.navigate(['home']);
-        });
-        this.SetUserData(result.user);
-      })
-      .catch(error => {
-        window.alert(error);
-      });
-  }
+  // AuthLogin(provider: any) {
+  //   return this.angularFireAuth
+  //     .signInWithPopup(provider)
+  //     .then(result => {
+  //       this.ngZone.run(() => {
+  //         this.router.navigate(['home']);
+  //       });
+  //       this.SetUserData(result.user);
+  //     })
+  //     .catch(error => {
+  //       window.alert(error);
+  //     });
+  // }
 
   SetUserData(user: any) {
     const userRef: AngularFirestoreDocument<any> = this.angularFireStore.doc(
@@ -125,7 +117,8 @@ export class AuthService {
   }
 
   SignOut() {
-    return this.angularFireAuth.signOut().then(() => {7
+    return this.angularFireAuth.signOut().then(() => {
+      7
       localStorage.removeItem('user');
       this.router.navigate(['home']);
     });

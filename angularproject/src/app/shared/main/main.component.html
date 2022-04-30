@@ -6,7 +6,7 @@
       apply now.
     </p>
 
-    <a routerLink="/allads" class="view-all-ads">View all ads</a>
+    <a routerLink="/feature/adds/allads" class="view-all-ads">View all ads</a>
   </article>
   
 
@@ -29,32 +29,15 @@
       <img src="./assets/static/img/strip-square.png" alt="strip-square">
   </article>
   
-  <ng-container *ngFor="let ad of ads"> 
-  <article class="intro-right-side">
+
+  <article *ngFor="let ad of ads" class="intro-right-side">
       <article class="intro-right-side-content">
           <img src="./assets/static/img/technology.png" alt="technology">
-          <h5>
+          <h4>
             {{ad.headline}}
-              <span>Candidates: 2</span>
-          </h5>
+              <span>{{ad.company}}</span>
+          </h4>
       </article>
      
-      <article class="intro-right-side-content">
-          <img src="./assets/static/img/technology.png" alt="technology">
-          <h5>
-            {{ad.headline}}
-              <span>Candidates: 1</span>
-          </h5>
-      </article>
-      
-      <article class="intro-right-side-content">
-         
-          <img src="./assets/static/img/technology.png" alt="technology">
-          <h5>
-            {{ad.headline}}
-              <span>Candidates: 0</span>
-          </h5>
-      </article>
-   
     
-   
+    
