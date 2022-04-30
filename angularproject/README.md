@@ -12,11 +12,13 @@ HTML
 
 CSS
 
+GoogleAuthentication
+
 NGX-Pagination
 
 NGX-Toastr
 
-Bootstrap(NGBootstrap)
+
 
 
 
