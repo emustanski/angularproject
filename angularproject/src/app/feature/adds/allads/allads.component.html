@@ -2,7 +2,7 @@
   <article class="all-ads-title">
     <h1>All ads</h1>
     <div *ngIf="Ad">
-      <app-add-item *ngFor="let ad of Ad | paginate: { itemsPerPage: 4, currentPage: p}; let i = index" [ad]="ad"></app-add-item>
+      <app-add-item *ngFor="let ad of Ad | paginate: { itemsPerPage: 6, currentPage: p}; let i = index" [ad]="ad"></app-add-item>
       <ng-container *ngIf="Ad.length === 0"> 
 
       <article class="not-available-ads">

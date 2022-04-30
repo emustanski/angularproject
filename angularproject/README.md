@@ -29,7 +29,8 @@ NGX-Toastr
 All guests can take a look at home page, about us page, ads catalog, login, register and of course 404 Not Found Page.
 Options to log in or sign up with Google, Email and Password and also option to reset your password.
 
+
 ### Logged in users
 
-Logged in users will be able to create, update, edit and delete their own ads.
+Logged in users will have access to their Profile Page, also will be able to create, update, edit and delete their own ads.
 

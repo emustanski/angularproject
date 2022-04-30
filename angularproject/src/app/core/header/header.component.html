@@ -6,8 +6,12 @@
     <ul class="header-nav-list">
       <li class="header-nav-list-item active">
         <a routerLink="/home" class="header-nav-list-item-link active"
-          >Home Page</a
-        >
+          >Home Page</a>
+      </li>
+
+      <li class="header-nav-list-item">
+        <a routerLink="/about" class="header-nav-list-item-link"
+          >About us</a>
       </li>
 
       <li class="header-nav-list-item">
@@ -16,14 +20,11 @@
 
       <li class="header-nav-list-item" *ngIf="isLoggedIn">
         <a routerLink="/feature/adds/create-ad" class="header-nav-list-item-link"
-          >Create Ad</a
-        >
+          >Create Ad</a>
       </li>
 
-      <li class="header-nav-list-item">
-        <a routerLink="/about" class="header-nav-list-item-link"
-          >About us</a
-        >
+      <li class="header-nav-list-item" *ngIf="isLoggedIn">
+        <a routerLink="/auth/profile/" class="header-nav-list-item-link">My Profile</a>
       </li>
 
       <li class="header-nav-list-item" *ngIf="isLoggedIn">
@@ -31,8 +32,7 @@
           type="button"
           (click)="authService.SignOut()"
           class="header-nav-list-item-link"
-          >Logout</a
-        >
+          >Logout</a>
       </li>
 
       <li class="header-nav-list-item" *ngIf="!isLoggedIn">

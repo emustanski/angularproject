@@ -1,0 +1,137 @@
+#profil-page
+ {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 42px;
+}
+
+.profil-page-container {
+  background-color: #fff;
+  width: 800px;
+  height: 600px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  line-height: 1.5;
+  left: 29%;
+  margin-bottom: 4.95em;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.185);
+}
+
+.profil-page-container > .profil-page-image > img {
+  width: 250px;
+  height: 380px;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 2px 2px 6px 4px #9dacf7;
+}
+
+.profil-page-image {
+  margin-top: 7px;
+}
+
+.profil-page-div > h2 {
+  padding-top: 0.4em;
+}
+h4 {
+    padding-top: 0.4em;
+  }
+
+.profil-page-div {
+  text-align: center;
+  padding-left: 30px;
+  margin-top: 2em;
+  padding-right: 30px;
+}
+
+.profil-page-div > h2 {
+  font-size: 1.6rem;
+  text-align: center;
+  color: #202f7c;
+}
+
+h4 {
+    font-size: 1.6rem;
+    text-align: center;
+    color: #202f7c;
+  }
+.profil-page-div > p {
+  font-size: 14px;
+  color: #3f497e;
+  margin: 2px 0;
+  margin-top: 1em;
+  margin-bottom: 15px;
+}
+
+.profil-page-div > input,
+.profil-page-div > button {
+  width: 100%;
+  border: none;
+  padding: 12px;
+  border-radius: 3px;
+}
+
+.profil-page-button {
+  margin-top: 1em;
+}
+
+.btn-profil {
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: 100px;
+  padding: 7px;
+  background: rgb(252, 83, 74);
+  font-weight: 500;
+  font-size: 14.5px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-profil:hover {
+  background: rgb(255, 67, 57);
+  box-shadow: 0px 0px 5px 0px #9dacf7;
+  color: white;
+  width: 110px;
+}
+
+label {
+  color: #202f7c;
+  transform: translateY(0rem);
+  font-size: 14px;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+}
+
+.profil-page-div > input {
+  border: 2px solid #6787ff;
+  margin: 3px 0 7px;
+  font-size: 0.8rem;
+  color: #656880;
+}
+
+span {
+  display: block;
+  text-align: center;
+  margin: 15px 0 0;
+  color: #babdcb;
+  font-size: 12px;
+}
+
+.no-account,
+.account {
+  padding: 1rem 1rem;
+  text-align: center;
+  font-size: 14px;
+  color: #202f7c;
+}
+
+.no-account > p > a,
+.account > p > a {
+  color: #6787ff;
+  font-weight: bold;
+  text-decoration: none;
+}
+

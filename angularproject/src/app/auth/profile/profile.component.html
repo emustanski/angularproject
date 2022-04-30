@@ -1,0 +1,19 @@
+<section *ngIf="authService.userData as user" id="profil-page">
+    <article class="profil-page-container">
+      <div class="profil-page-div">
+        <h2>Hello, {{user.email}}</h2>
+        <label for="email">Your UserID is :</label>
+        <h2><p> {{user.uid}} </p></h2>
+
+        <article class="profil-page-button">
+           <button class="btn-profil" (click)="authService.SignOut()"> Sign Out </button> 
+        </article> 
+
+      </div> 
+  
+      <article class="profil-page-image">
+        <img src="./assets/static/img/user-photo.jpg" alt="job-image" />
+      </article>
+    </article>
+  </section>
+  
