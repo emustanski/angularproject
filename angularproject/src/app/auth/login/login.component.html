@@ -23,13 +23,13 @@
           Login
         </button>
       </article>
-  
-      <div class="formGroup">
-        <span class="or"><span class="orInner">Or</span></span>
-      </div>
-
-      <article class="no-account">
+        <label for="email">Or</label>
+        <article class="no-account">
+      <button type="button" class="btn-login" (click)="authService.GoogleAuth()">
+        Sign in with Google
+        </button>
         <p>Don't have an account? <a routerLink="/auth/register">Sign up</a></p>
+        <p><a routerLink="/auth/forgot-password">Forgot your password? </a></p>
       </article>
     </div>
     <article class="login-page-image">

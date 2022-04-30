@@ -30,7 +30,12 @@
           Register
         </button>
       </article>
-
+      <label for="email">Or</label>
+      <article class="account">
+    <button type="button" class="btn-login" (click)="authService.GoogleAuth()">
+      Sign in with Google
+      </button>
+    </article>
       <article class="account">
         <p>Already have an account? <a routerLink="/auth/login">Sign in</a></p>
       </article>

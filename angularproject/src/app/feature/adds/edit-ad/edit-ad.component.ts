@@ -51,10 +51,10 @@ export class EditAdComponent implements OnInit {
 
   updateAdData() {
     this.editForm = this.fb.group({
-      headline: ['', [Validators.required, Validators.minLength(5)]],
-      company: ['', [Validators.required, Validators.minLength(3)]],
-      description: ['', [Validators.required, Validators.minLength(20)]],
-      location: ['', [Validators.required, Validators.minLength(8)]],
+      headline: ['', [Validators.required, Validators.minLength(3)]],
+      company: ['', [Validators.required, Validators.minLength(4)]],
+      description: ['', [Validators.required, Validators.minLength(10)]],
+      location: ['', [Validators.required, Validators.minLength(4)]],
       createdAt: '',
       authorEmail: ''
     });

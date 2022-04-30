@@ -1,5 +1,6 @@
 import { Injectable, NgZone} from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import * as auth from 'firebase/auth'
 import {
   AngularFirestore,
   AngularFirestoreDocument,
@@ -88,19 +89,44 @@ export class AuthService {
     return user !== null ? true : false;
   }
 
-  // AuthLogin(provider: any) {
-  //   return this.angularFireAuth
-  //     .signInWithPopup(provider)
-  //     .then(result => {
-  //       this.ngZone.run(() => {
-  //         this.router.navigate(['home']);
-  //       });
-  //       this.SetUserData(result.user);
-  //     })
-  //     .catch(error => {
-  //       window.alert(error);
-  //     });
-  // }
+  GoogleAuth() {
+    return this.AuthLogin(new auth.GoogleAuthProvider()).then((res: any) => {
+      if (res) {
+        this.router.navigate(['home']);
+      }
+    });
+  }
+
+  AuthLogin(provider: any) {
+    return this.angularFireAuth
+      .signInWithPopup(provider)
+      .then((result) => {
+        this.ngZone.run(() => {
+          this.router.navigate(['home']);
+        });
+        this.SetUserData(result.user);
+      })
+      .catch((error) => {
+        if (error.code == 'auth/email-already-in-use') {
+          this.toastr.error('Email already in use!');
+        } else if (error.code == 'auth/weak-password') {
+          this.toastr.error('Password must be at least 6 characters long.')
+        } else if (error.code == 'auth/invalid-email') {
+          this.toastr.error('Email format is invalid.')
+        } 
+      });
+  };
+
+  ForgotPassword(passwordResetEmail: string) {
+    return this.angularFireAuth
+      .sendPasswordResetEmail(passwordResetEmail)
+      .then(() => {
+        this.toastr.success('Password reset email sent, check your inbox.');
+      })
+      .catch((error) => {
+        this.toastr.error(error);
+      });
+  }
 
   SetUserData(user: any) {
     const userRef: AngularFirestoreDocument<any> = this.angularFireStore.doc(
