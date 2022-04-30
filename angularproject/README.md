@@ -12,7 +12,7 @@ HTML
 
 CSS
 
-GoogleAuthentication
+Google Authentication
 
 NGX-Pagination
 
@@ -27,6 +27,7 @@ NGX-Toastr
 ### Not logged in users
 
 All guests can take a look at home page, about us page, ads catalog, login, register and of course 404 Not Found Page.
+Options to log in or sign up with Google, Email and Password and also option to reset your password.
 
 ### Logged in users
 
